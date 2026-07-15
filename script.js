@@ -188,7 +188,7 @@ function performAISearch() {
     `;
     
     // Call the backend API
-    const apiUrl = 'https://ai-business-solution-backend-1.onrender.com/api/search';
+    const apiUrl = 'https://ai-business-solution-backend1.onrender.com/api/search';
     
     fetch(apiUrl, {
         method: 'POST',
