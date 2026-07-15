@@ -40,7 +40,7 @@ function performAISearch() {
     `;
     
     // Call the backend API
-    const apiUrl = 'https://your-backend-url.onrender.com/api/search'; // Replace with your backend URL
+    const apiUrl = 'https://ai-business-solution-backend.onrender.com'; // Replace with your backend URL
     
     fetch(apiUrl, {
         method: 'POST',
