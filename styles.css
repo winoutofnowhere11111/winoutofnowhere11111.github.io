@@ -1,0 +1,509 @@
+/* 
+============================================
+styles.css - Complete Stylesheet
+============================================
+INVENTOR: W3C CSS Working Group
+FUNCTIONALITY: Styles all pages with consistent design
+REPLACEMENT: Use SCSS, Less, or Tailwind CSS
+MODIFICATION: Change colors, fonts, or layout
+============================================
+*/
+
+/* -------- Reset and Base Styles -------- */
+/* INVENTOR: Eric Meyer (CSS Reset) and Normalize.css */
+/* FUNCTIONALITY: Resets browser default styles for consistency */
+/* REPLACEMENT: Use Normalize.css or modern CSS reset */
+/* MODIFICATION: Add or remove reset rules */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* 
+    box-sizing: border-box - INVENTOR: CSS3 Box Model
+    FUNCTIONALITY: Includes padding and border in element's total width/height
+    REPLACEMENT: Use content-box for different behavior
+    MODIFICATION: Change to 'content-box' if needed
+    */
+}
+
+/* -------- Body Styles -------- */
+/* INVENTOR: Web design principles */
+/* FUNCTIONALITY: Sets base styles for the entire page */
+/* MODIFICATION: Change background, font, or color */
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    /* 
+    font-family: INVENTOR - Google Fonts
+    FUNCTIONALITY: Sets the primary font for the page
+    REPLACEMENT: Use system fonts or custom web fonts
+    MODIFICATION: Change to 'Open Sans' or 'Roboto' 
+    */
+    
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    /* 
+    background: INVENTOR - CSS3 Gradients
+    FUNCTIONALITY: Creates a gradient background
+    REPLACEMENT: Use solid color or background image
+    MODIFICATION: Change colors or gradient direction
+    */
+    
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #333;
+}
+
+/* -------- Main Container -------- */
+/* INVENTOR: CSS Flexbox */
+/* FUNCTIONALITY: Centers content and adds styling */
+/* REPLACEMENT: Use CSS Grid or absolute positioning */
+/* MODIFICATION: Change max-width, padding, or background */
+
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    /* 
+    background: INVENTOR - CSS3 opacity
+    FUNCTIONALITY: Creates semi-transparent background
+    REPLACEMENT: Use opaque background
+    MODIFICATION: Change opacity or color
+    */
+    
+    backdrop-filter: blur(10px);
+    /* 
+    backdrop-filter: INVENTOR - Apple
+    FUNCTIONALITY: Applies blur effect behind element
+    REPLACEMENT: Use SVG filters or remove
+    MODIFICATION: Change blur amount or add other filters
+    */
+    
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 900px;
+    width: 100%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    /* 
+    box-shadow: INVENTOR - CSS3
+    FUNCTIONALITY: Adds shadow for depth
+    REPLACEMENT: Use border or outline
+    MODIFICATION: Change shadow color, blur, or position
+    */
+    
+    transition: all 0.3s ease;
+    /* 
+    transition: INVENTOR - CSS3
+    FUNCTIONALITY: Smooth animations for state changes
+    REPLACEMENT: Use JavaScript animations
+    MODIFICATION: Change duration or easing
+    */
+}
+
+/* -------- Header Styles -------- */
+/* INVENTOR: Typography design */
+/* FUNCTIONALITY: Styles the main heading and subtitle */
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    /* 
+    font-size: INVENTOR - CSS
+    FUNCTIONALITY: Sets text size
+    REPLACEMENT: Use percentage or em units
+    MODIFICATION: Change size for different screens
+    */
+    
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 10px;
+}
+
+header h1 i {
+    color: #667eea;
+    margin-right: 10px;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #718096;
+    font-weight: 300;
+}
+
+/* -------- Search Section -------- */
+/* INVENTOR: UI/UX design */
+/* FUNCTIONALITY: Styles the search input and button */
+
+.search-section {
+    margin: 30px 0;
+}
+
+.search-container {
+    display: flex;
+    gap: 10px;
+    /* 
+    gap: INVENTOR - CSS Flexbox
+    FUNCTIONALITY: Adds space between flex items
+    REPLACEMENT: Use margin or padding
+    MODIFICATION: Change gap size
+    */
+}
+
+.search-input {
+    flex: 1;
+    padding: 15px 20px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    outline: none;
+    /* 
+    outline: none - INVENTOR: UX design
+    FUNCTIONALITY: Removes default focus outline
+    REPLACEMENT: Use custom focus styles
+    MODIFICATION: Add custom outline if needed
+    */
+}
+
+.search-input:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+.search-input::placeholder {
+    color: #a0aec0;
+}
+
+.search-btn {
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    /* 
+    cursor: pointer - INVENTOR: User interface
+    FUNCTIONALITY: Changes cursor to indicate clickability
+    REPLACEMENT: Use custom cursor
+    MODIFICATION: Change to 'default' if not clickable
+    */
+}
+
+.search-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+}
+
+.search-btn:active {
+    transform: translateY(0);
+}
+
+.search-hint {
+    margin-top: 15px;
+    color: #718096;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.search-hint i {
+    margin-right: 5px;
+    color: #667eea;
+}
+
+/* -------- Alphabet Navigation -------- */
+/* INVENTOR: Quick access navigation */
+/* FUNCTIONALITY: Styles the alphabet buttons */
+
+.alphabet-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin: 30px 0;
+    padding: 20px;
+    background: #f7fafc;
+    border-radius: 12px;
+}
+
+.alphabet-btn {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #e2e8f0;
+    background: white;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #2d3748;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.alphabet-btn:hover {
+    background: #667eea;
+    color: white;
+    transform: scale(1.05);
+    border-color: #667eea;
+}
+
+.alphabet-btn:active {
+    transform: scale(0.95);
+}
+
+/* -------- Statistics Section -------- */
+/* INVENTOR: Data display */
+/* FUNCTIONALITY: Shows total problem count */
+
+.stats {
+    text-align: center;
+    padding: 15px;
+    background: #f7fafc;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+.stats p {
+    font-size: 1rem;
+    color: #4a5568;
+}
+
+.stats i {
+    color: #667eea;
+    margin-right: 8px;
+}
+
+#totalProblems {
+    font-weight: 700;
+    color: #2d3748;
+}
+
+/* -------- Results Page Styles -------- */
+/* INVENTOR: Search results design */
+/* FUNCTIONALITY: Styles the results page */
+
+.results-page {
+    display: none;
+    /* 
+    display: none - INVENTOR: CSS
+    FUNCTIONALITY: Hides the results page initially
+    REPLACEMENT: Use visibility: hidden
+    MODIFICATION: Change to 'block' to show
+    */
+}
+
+.results-page.active {
+    display: block;
+}
+
+.results-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.back-btn {
+    padding: 10px 20px;
+    background: #edf2f7;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    color: #2d3748;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background: #e2e8f0;
+    transform: translateX(-2px);
+}
+
+.results-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.results-title span {
+    color: #667eea;
+}
+
+.results-count {
+    font-size: 0.9rem;
+    color: #718096;
+}
+
+/* -------- Results List -------- */
+/* INVENTOR: List design */
+/* FUNCTIONALITY: Styles the list of problems */
+
+.results-list {
+    max-height: 500px;
+    overflow-y: auto;
+    /* 
+    overflow-y: auto - INVENTOR: CSS
+    FUNCTIONALITY: Adds scrollbar when content overflows
+    REPLACEMENT: Use JavaScript scroll
+    MODIFICATION: Change max-height or overflow behavior
+    */
+}
+
+.results-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.results-list::-webkit-scrollbar-track {
+    background: #f7fafc;
+    border-radius: 4px;
+}
+
+.results-list::-webkit-scrollbar-thumb {
+    background: #cbd5e0;
+    border-radius: 4px;
+}
+
+.results-list::-webkit-scrollbar-thumb:hover {
+    background: #a0aec0;
+}
+
+.result-item {
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    background: #f7fafc;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+}
+
+.result-item:hover {
+    background: #edf2f7;
+    transform: translateX(5px);
+    border-left-color: #667eea;
+}
+
+.result-item:active {
+    transform: scale(0.98);
+}
+
+.result-item .problem-text {
+    font-size: 1rem;
+    color: #2d3748;
+}
+
+.result-item .problem-id {
+    font-size: 0.8rem;
+    color: #a0aec0;
+    margin-left: 10px;
+}
+
+/* -------- No Results State -------- */
+/* INVENTOR: Empty state design */
+/* FUNCTIONALITY: Shows when no problems found */
+
+.no-results {
+    text-align: center;
+    padding: 40px 20px;
+    color: #718096;
+}
+
+.no-results i {
+    font-size: 3rem;
+    color: #cbd5e0;
+    margin-bottom: 15px;
+}
+
+/* -------- Responsive Design -------- */
+/* INVENTOR: Responsive web design */
+/* FUNCTIONALITY: Adapts layout for different screen sizes */
+/* REPLACEMENT: Use different breakpoints */
+/* MODIFICATION: Change breakpoint values */
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .search-container {
+        flex-direction: column;
+        /* 
+        flex-direction: column - INVENTOR: CSS Flexbox
+        FUNCTIONALITY: Stacks elements vertically on mobile
+        REPLACEMENT: Use grid or block layout
+        MODIFICATION: Change to 'row' for horizontal
+        */
+    }
+    
+    .search-btn {
+        width: 100%;
+    }
+    
+    .alphabet-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 0.8rem;
+    }
+    
+    .results-header {
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.4rem;
+    }
+    
+    .container {
+        padding: 15px;
+    }
+    
+    .alphabet-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 0.7rem;
+    }
+}
+
+/* 
+============================================
+OPTIMIZATION NOTES:
+============================================
+1. Use CSS variables for easier theming
+2. Implement dark mode support
+3. Use CSS Grid for complex layouts
+4. Optimize animations for performance
+5. Use will-change for smooth animations
+6. Implement print styles
+7. Use rem/em for better accessibility
+8. Add focus states for keyboard navigation
+9. Use flex/grid for better responsiveness
+10. Implement CSS custom properties for theming
+
+HOW TO MODIFY:
+1. Change colors in the gradient variables
+2. Adjust spacing in the container padding
+3. Modify font sizes for different screens
+4. Change border-radius for different shape
+5. Adjust shadow for different depth
+6. Modify animation durations
+7. Change breakpoints for different devices
+8. Add new color schemes
+============================================
+*/

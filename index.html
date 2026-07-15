@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<!-- 
+============================================
+index.html - Main Search Page
+============================================
+INVENTOR: Tim Berners-Lee (HTML), Brendan Eich (JavaScript)
+FUNCTIONALITY: Main landing page with search bar for business problems
+REPLACEMENT: Can be built with React, Vue.js, or Angular
+MODIFICATION: Change layout, colors, or add more features
+============================================
+-->
+
+<html lang="en">
+<head>
+    <!-- Meta tags for character encoding and responsive design -->
+    <!-- INVENTOR: W3C (World Wide Web Consortium) -->
+    <!-- FUNCTIONALITY: Sets character set to UTF-8 for international characters -->
+    <!-- REPLACEMENT: Use different encoding like ISO-8859-1 -->
+    <!-- MODIFICATION: Change to 'charset=ISO-8859-1' for Western languages -->
+    <meta charset="UTF-8">
+    
+    <!-- Viewport for mobile responsiveness -->
+    <!-- INVENTOR: Apple (for iOS Safari) -->
+    <!-- FUNCTIONALITY: Makes site responsive on mobile devices -->
+    <!-- REPLACEMENT: Use CSS @media queries -->
+    <!-- MODIFICATION: Change initial-scale for different zoom levels -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Page title - appears in browser tab -->
+    <!-- INVENTOR: SEO best practices -->
+    <!-- FUNCTIONALITY: Sets the title for SEO and user experience -->
+    <!-- MODIFICATION: Change to your preferred title -->
+    <title>Infinite Possibilities - Business Solutions</title>
+    
+    <!-- Link to external CSS stylesheet -->
+    <!-- INVENTOR: W3C CSS Working Group -->
+    <!-- FUNCTIONALITY: Applies styles to HTML elements -->
+    <!-- REPLACEMENT: Use inline styles or CSS-in-JS -->
+    <!-- MODIFICATION: Change to different stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Font Awesome for icons -->
+    <!-- INVENTOR: Font Awesome Team -->
+    <!-- FUNCTIONALITY: Provides vector icons for better UI -->
+    <!-- REPLACEMENT: Use Material Icons or Bootstrap Icons -->
+    <!-- MODIFICATION: Change CDN version or use local files -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts for better typography -->
+    <!-- INVENTOR: Google -->
+    <!-- FUNCTIONALITY: Loads custom fonts from Google -->
+    <!-- REPLACEMENT: Use local fonts or other CDN fonts -->
+    <!-- MODIFICATION: Change font family or weights -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- 
+    ============================================
+    Main Container - Wraps all content
+    ============================================
+    INVENTOR: CSS layout techniques
+    FUNCTIONALITY: Centers content and sets max-width
+    REPLACEMENT: Use CSS grid or flexbox
+    MODIFICATION: Change max-width or padding
+    -->
+    <div class="container">
+        <!-- 
+        ============================================
+        Header Section - Branding and Title
+        ============================================
+        INVENTOR: Web design best practices
+        FUNCTIONALITY: Displays site logo and main heading
+        REPLACEMENT: Use image logo instead of text
+        MODIFICATION: Add logo image or animated text
+        -->
+        <header>
+            <h1>
+                <!-- Infinite Possibilities text with icon -->
+                <!-- INVENTOR: Font Awesome for icons -->
+                <!-- FUNCTIONALITY: Shows brand name with infinity icon -->
+                <!-- MODIFICATION: Change icon or text style -->
+                <i class="fas fa-infinity"></i> Infinite Possibilities
+            </h1>
+            <p>
+                <!-- Subtitle describing the site's purpose -->
+                <!-- INVENTOR: UX writing -->
+                <!-- FUNCTIONALITY: Explains site purpose to users -->
+                <!-- MODIFICATION: Change description text -->
+                Discover 10,000+ Business Solutions for India & USA
+            </p>
+        </header>
+
+        <!-- 
+        ============================================
+        Search Section - Main Search Bar
+        ============================================
+        INVENTOR: Search interface design
+        FUNCTIONALITY: Allows users to search by first letter
+        REPLACEMENT: Use voice search or dropdown
+        MODIFICATION: Add autocomplete or suggestions
+        -->
+        <div class="search-section">
+            <div class="search-container">
+                <!-- Search Input Field -->
+                <!-- INVENTOR: HTML Input elements -->
+                <!-- FUNCTIONALITY: Accepts user input for search -->
+                <!-- REPLACEMENT: Use contenteditable div -->
+                <!-- MODIFICATION: Change placeholder text or add maxlength -->
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="Enter a letter (A-Z) to search business problems..."
+                    maxlength="1"
+                    class="search-input"
+                >
+                
+                <!-- Search Button -->
+                <!-- INVENTOR: HTML Button -->
+                <!-- FUNCTIONALITY: Triggers search when clicked -->
+                <!-- REPLACEMENT: Use input event for real-time search -->
+                <!-- MODIFICATION: Change button style or add keyboard shortcut -->
+                <button id="searchBtn" class="search-btn">
+                    <i class="fas fa-search"></i> Search
+                </button>
+            </div>
+            
+            <!-- Search Hint Text -->
+            <!-- INVENTOR: UX design -->
+            <!-- FUNCTIONALITY: Guides users on how to use the search -->
+            <!-- MODIFICATION: Change hint text or add examples -->
+            <p class="search-hint">
+                <i class="fas fa-info-circle"></i>
+                Type a single letter (A-Z) to find problems starting with that letter
+            </p>
+        </div>
+
+        <!-- 
+        ============================================
+        Alphabet Navigation - Quick Letter Access
+        ============================================
+        INVENTOR: Quick navigation design
+        FUNCTIONALITY: Provides clickable alphabet for easy browsing
+        REPLACEMENT: Use dropdown or scroll bar
+        MODIFICATION: Change color scheme or sizing
+        -->
+        <div class="alphabet-nav">
+            <!-- Generate alphabet letters A-Z -->
+            <!-- INVENTOR: JavaScript string manipulation -->
+            <!-- FUNCTIONALITY: Creates clickable alphabet buttons -->
+            <!-- REPLACEMENT: Use predefined HTML -->
+            <!-- MODIFICATION: Change to include numbers or special chars -->
+        </div>
+
+        <!-- 
+        ============================================
+        Statistics Section - Shows Data Count
+        ============================================
+        INVENTOR: Data visualization
+        FUNCTIONALITY: Displays total number of problems
+        REPLACEMENT: Hide or show on demand
+        MODIFICATION: Add more statistics
+        -->
+        <div class="stats">
+            <p>
+                <i class="fas fa-database"></i>
+                Total Problems: <span id="totalProblems">10,000+</span>
+            </p>
+        </div>
+    </div>
+    <!-- Results Page Container -->
+<div id="resultsPage" class="results-page">
+    <div class="results-header">
+        <button id="backBtn" class="back-btn"><i class="fas fa-arrow-left"></i> Back</button>
+        <div class="results-title">Results for letter: <span id="resultsLetter">A</span></div>
+        <div class="results-count">Found <span id="resultsCount">0</span> problems</div>
+    </div>
+    <div id="resultsList" class="results-list">
+        <!-- Results will be listed here -->
+    </div>
+</div>
+
+    <!-- 
+    ============================================
+    JavaScript Files
+    ============================================
+    INVENTOR: Brendan Eich (JavaScript)
+    FUNCTIONALITY: Adds interactivity to the page
+    REPLACEMENT: Use TypeScript or WebAssembly
+    MODIFICATION: Add more functionality or change logic
+    -->
+    
+    <!-- Load problems data first -->
+    <!-- INVENTOR: JavaScript modules -->
+    <!-- FUNCTIONALITY: Contains all 10,000+ business problems -->
+    <!-- REPLACEMENT: Load from external API or database -->
+    <!-- MODIFICATION: Add more problems or change structure -->
+    <script src="problems-data.js"></script>
+    
+    <!-- Main application logic -->
+    <!-- INVENTOR: JavaScript MVC pattern -->
+    <!-- FUNCTIONALITY: Handles search, filtering, and navigation -->
+    <!-- REPLACEMENT: Use React or Vue.js -->
+    <!-- MODIFICATION: Change search algorithm or UI behavior -->
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!-- 
+============================================
+OPTIMIZATION NOTES:
+============================================
+1. Preload critical resources for faster loading
+2. Lazy load images and non-critical scripts
+3. Use service workers for offline support
+4. Implement caching headers for static assets
+5. Minify CSS and JavaScript for production
+6. Use CDN for external resources
+7. Implement lazy loading for problem list
+8. Add loading states for better UX
+9. Use debouncing for search input
+10. Implement pagination for better performance
+
+HOW TO MODIFY THE SEARCH:
+1. Change search algorithm in script.js
+2. Add fuzzy matching or spell checking
+3. Implement voice search
+4. Add advanced filters (region, category, etc.)
+5. Add sort options (alphabetical, popularity, etc.)
+============================================
+-->
